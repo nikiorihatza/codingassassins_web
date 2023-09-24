@@ -1,0 +1,128 @@
+/* Set the viewport width to the device width and scale the page to fit the device */
+meta[name="viewport"] {
+    width: device-width;
+    initial-scale: 1;
+    user-scalable: yes;
+}
+
+/* Set the default font size to 16px */
+html {
+    font-size: 16px;
+}
+
+/* Use rem units for font sizes */
+body {
+    font-size: 1rem;
+    background-color: #262626;
+    font-family: Consolas, serif;
+    color: white;
+    font-weight: bold;
+}
+
+/* Use flexbox to align the header content */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Make the logo image responsive */
+#logo img {
+    height: 95.59px;
+    width: 125px;
+}
+
+/* Center the loading spinner */
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Center the h1 text and adjust the font size */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Use flexbox to position the loading spinner */
+#loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust the size and spacing of the loading spinner */
+#loading div {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: scaling 2.5s ease-in-out infinite;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+#loading div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#loading div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#loading div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+#loading div:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+#loading div:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes scaling{
+    0%, 100%{
+        transform: scale(0.2);
+        background-color: #30FFB7;
+    }
+    40%{
+        transform: scale(1);
+        background-color: #07DEFF;
+    }
+    50%{
+        transform: scale(1);
+        background-color: #0761FF;
+    }
+}
+
+.typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
